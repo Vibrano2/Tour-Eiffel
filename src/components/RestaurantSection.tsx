@@ -17,7 +17,7 @@ import {
 } from 'lucide-react';
 
 export default function RestaurantSection() {
-  const { language, t, gastronomyData, hotelInfo } = useLanguage();
+  const { language, t, gastronomy: gastronomyData, hotelInfo } = useLanguage();
   const [activeCategory, setActiveCategory] = useState<'all' | 'entrée' | 'plat' | 'dessert' | 'cocktail'>('all');
   
   // Seating Map and booking state
