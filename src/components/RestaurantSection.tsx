@@ -88,10 +88,10 @@ export default function RestaurantSection() {
   };
 
   return (
-    <section className="py-24 bg-regal-red-900 text-white relative" id="restaurant-section">
-      <div className="absolute inset-0 bg-regal-red-900/90 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#121c3d] via-[#FAFAFA] to-[#FAFAFA] pointer-events-none" />
+    <section className="py-24 bg-midnight-900 text-white relative" id="restaurant-section">
+      <div className="absolute inset-0 bg-midnight-900/90 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#121c3d] via-[#FAFAFA] to-[#FAFAFA] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Title */}
         <div className="text-center mb-16">
@@ -99,13 +99,13 @@ export default function RestaurantSection() {
             {language === 'fr' ? "Hautes Saveurs d'Origine" : 'High Culinary Heritage'}
           </span>
           <h2 className="font-serif text-3xl sm:text-5xl font-medium tracking-tight text-white uppercase">
-            {t('restaurant.title')}
+            {t('rest.title')}
           </h2>
           <div className="w-16 h-[1px] bg-gradient-to-r from-transparent via-gold-400 to-transparent mx-auto mt-6" />
         </div>
 
         {/* Chef Kofi d'Almeida Profile Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-24 bg-regal-red-950/40 border border-gold-500/10 p-6 sm:p-10 rounded-lg shadow-xl" id="chef-profile">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-24 bg-midnight-950/40 border border-gold-500/10 p-6 sm:p-10 rounded-lg shadow-xl" id="chef-profile">
           
           <div className="lg:col-span-4 relative group rounded overflow-hidden">
             <img 
@@ -273,7 +273,7 @@ export default function RestaurantSection() {
                       value={bookingName}
                       onChange={(e) => setBookingName(e.target.value)}
                       placeholder={language === 'fr' ? "Ex: Excellence Marcel da Silva" : "e.g., Ambassador da Silva"}
-                      className="w-full bg-regal-red-900 border border-gold-500/10 focus:border-gold-400 rounded p-2.5 text-sm outline-none text-white"
+                      className="w-full bg-midnight-900 border border-gold-500/10 focus:border-gold-400 rounded p-2.5 text-sm outline-none text-white"
                       id="table-input-name"
                     />
                   </div>
@@ -289,7 +289,7 @@ export default function RestaurantSection() {
                         required
                         value={reserveDate}
                         onChange={(e) => setReserveDate(e.target.value)}
-                        className="w-full bg-regal-red-900 border border-gold-500/10 focus:border-gold-400 rounded p-2.5 text-sm outline-none text-white"
+                        className="w-full bg-midnight-900 border border-gold-500/10 focus:border-gold-400 rounded p-2.5 text-sm outline-none text-white"
                         id="table-input-date"
                       />
                     </div>
@@ -302,7 +302,7 @@ export default function RestaurantSection() {
                       <select 
                         value={reserveTime}
                         onChange={(e) => setReserveTime(e.target.value)}
-                        className="w-full bg-regal-red-900 border border-gold-500/10 focus:border-gold-400 rounded p-2.5 text-sm outline-none text-white cursor-pointer"
+                        className="w-full bg-midnight-900 border border-gold-500/10 focus:border-gold-400 rounded p-2.5 text-sm outline-none text-white cursor-pointer"
                         style={{ colorScheme: 'dark' }}
                         id="table-select-time"
                       >
@@ -323,7 +323,7 @@ export default function RestaurantSection() {
                     <select
                       value={bookingGuests}
                       onChange={(e) => setBookingGuests(e.target.value)}
-                      className="w-full bg-regal-red-900 border border-gold-500/10 focus:border-gold-400 rounded p-2.5 text-sm outline-none text-white cursor-pointer"
+                      className="w-full bg-midnight-900 border border-gold-500/10 focus:border-gold-400 rounded p-2.5 text-sm outline-none text-white cursor-pointer"
                       style={{ colorScheme: 'dark' }}
                       id="table-select-guests"
                     >
@@ -349,7 +349,7 @@ export default function RestaurantSection() {
               </div>
 
               {/* Right Column: Visual seating chart map */}
-              <div className="lg:col-span-7 flex flex-col justify-between bg-regal-red-900/80 p-6 rounded border border-gold-500/10 relative">
+              <div className="lg:col-span-7 flex flex-col justify-between bg-midnight-900/80 p-6 rounded border border-gold-500/10 relative">
                 
                 <div>
                   <div className="flex items-center justify-between mb-4 border-b border-gold-500/5 pb-3">
@@ -377,7 +377,7 @@ export default function RestaurantSection() {
                               ? 'border-red-500/30 bg-red-500/5 text-gray-400 cursor-not-allowed' 
                               : isSelected 
                                 ? 'border-gold-400 bg-gold-400 text-white font-bold' 
-                                : 'border-gold-500/20 bg-regal-red-950/80 text-gray-200 hover:border-gold-400/40 hover:bg-regal-red-950'
+                                : 'border-gold-500/20 bg-midnight-950/80 text-gray-200 hover:border-gold-400/40 hover:bg-midnight-950'
                           }`}
                           id={`seating-tbl-box-${tbl.id}`}
                         >
@@ -401,7 +401,7 @@ export default function RestaurantSection() {
                 {/* Legend bar */}
                 <div className="mt-4 pt-3 border-t border-gold-500/5 flex flex-wrap justify-center gap-4 text-[10px] tracking-wider uppercase text-gray-300">
                   <div className="flex items-center gap-1.5">
-                    <div className="w-2.5 h-2.5 rounded bg-regal-red-950 border border-gold-500/20" />
+                    <div className="w-2.5 h-2.5 rounded bg-midnight-950 border border-gold-500/20" />
                     <span>{language === 'fr' ? "Disponible" : "Available"}</span>
                   </div>
 
@@ -434,7 +434,7 @@ export default function RestaurantSection() {
                 {tableBookingSuccess}
               </p>
 
-              <div className="p-4 bg-regal-red-900 border border-gold-500/10 rounded-lg text-left text-xs mb-8 space-y-2 font-mono">
+              <div className="p-4 bg-midnight-900 border border-gold-500/10 rounded-lg text-left text-xs mb-8 space-y-2 font-mono">
                 <div className="flex justify-between">
                   <span className="text-gray-400">{language === 'fr' ? "CONVIVES:" : "COVERS SEATED:"}</span>
                   <span className="text-white font-bold">{bookingGuests}</span>
@@ -463,7 +463,7 @@ export default function RestaurantSection() {
 
                 <button
                   onClick={resetTableBooking}
-                  className="px-6 py-3 border border-gold-500/15 rounded text-xs uppercase tracking-widest font-semibold text-gray-200 hover:text-white bg-regal-red-900 cursor-pointer"
+                  className="px-6 py-3 border border-gold-500/15 rounded text-xs uppercase tracking-widest font-semibold text-gray-200 hover:text-white bg-midnight-900 cursor-pointer"
                   id="table-close-confirm"
                 >
                   {language === 'fr' ? "Fermer la confirmation" : "Close confirmation"}
