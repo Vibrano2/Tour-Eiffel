@@ -1,16 +1,13 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../LanguageContext';
 import { Landmark, Mail, Phone, MapPin, ArrowUp, Star, Send, Check } from 'lucide-react';
 import { HOTEL_INFO } from '../data';
-import { ActiveTab } from '../types';
 import logoImage from '../../assets/images/logo1.svg';
 
-interface FooterProps {
-  setActiveTab: (tab: ActiveTab) => void;
-}
-
-export default function Footer({ setActiveTab }: FooterProps) {
+export default function Footer() {
   const { language, t } = useLanguage();
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
@@ -95,7 +92,7 @@ export default function Footer({ setActiveTab }: FooterProps) {
                         }}
                         placeholder={language === 'fr' ? "Saisissez votre adresse email de prestige..." : "Enter your premium email address..."}
                         disabled={status === 'loading'}
-                        className="w-full bg-regal-red-900/80 text-white placeholder-gray-500 text-xs sm:text-sm px-4 py-3.5 rounded border border-gold-500/20 focus:outline-none focus:border-gold-400 focus:ring-1 focus:ring-gold-400 transition-all font-light"
+                        className="w-full bg-midnight-900/80 text-white placeholder-gray-500 text-xs sm:text-sm px-4 py-3.5 rounded border border-gold-500/20 focus:outline-none focus:border-gold-400 focus:ring-1 focus:ring-gold-400 transition-all font-light"
                         required
                         id="newsletter-email-input"
                       />
@@ -174,7 +171,7 @@ export default function Footer({ setActiveTab }: FooterProps) {
             <ul className="space-y-2 text-xs font-light">
               <li>
                 <button 
-                  onClick={() => { setActiveTab('home'); handleScrollToTop(); }}
+                  onClick={() => { navigate('/'); handleScrollToTop(); }}
                   className="hover:text-gold-400 transition cursor-pointer flex items-center gap-1 text-left"
                 >
                   {language === 'fr' ? "Accueil Impérial" : "Imperial Suite Entrance"}
@@ -182,7 +179,7 @@ export default function Footer({ setActiveTab }: FooterProps) {
               </li>
               <li>
                 <button 
-                  onClick={() => { setActiveTab('rooms'); handleScrollToTop(); }}
+                  onClick={() => { navigate('/rooms'); handleScrollToTop(); }}
                   className="hover:text-gold-400 transition cursor-pointer flex items-center gap-1 text-left"
                 >
                   {language === 'fr' ? "Chambres & Suites d'Art" : "Artistic Chambers & Suites"}
@@ -190,7 +187,7 @@ export default function Footer({ setActiveTab }: FooterProps) {
               </li>
               <li>
                 <button 
-                  onClick={() => { setActiveTab('restaurant'); handleScrollToTop(); }}
+                  onClick={() => { navigate('/restaurant'); handleScrollToTop(); }}
                   className="hover:text-gold-400 transition cursor-pointer flex items-center gap-1 text-left"
                 >
                   {language === 'fr' ? "Table Étoilée \"L'Art de Vivre\"" : "High Table \"L'Art de Vivre\""}
@@ -198,7 +195,7 @@ export default function Footer({ setActiveTab }: FooterProps) {
               </li>
               <li>
                 <button 
-                  onClick={() => { setActiveTab('events'); handleScrollToTop(); }}
+                  onClick={() => { navigate('/events'); handleScrollToTop(); }}
                   className="hover:text-gold-400 transition cursor-pointer flex items-center gap-1 text-left"
                 >
                   {language === 'fr' ? "Salons de Prestige Concorde" : "Prestigious Concorde Lounges"}
@@ -206,7 +203,7 @@ export default function Footer({ setActiveTab }: FooterProps) {
               </li>
               <li>
                 <button 
-                  onClick={() => { setActiveTab('chat'); handleScrollToTop(); }}
+                  onClick={() => { navigate('/chat'); handleScrollToTop(); }}
                   className="hover:text-gold-400 transition cursor-pointer flex items-center gap-1 text-left"
                 >
                   {language === 'fr' ? "Concierge IA Dédié" : "Dedicated AI Concierge"}
@@ -261,7 +258,7 @@ export default function Footer({ setActiveTab }: FooterProps) {
 
           <button
             onClick={handleScrollToTop}
-            className="flex items-center gap-1.5 px-3 py-2 bg-regal-red-900 border border-gold-500/20 hover:border-gold-400 hover:text-gold-400 text-xs uppercase tracking-widest transition rounded cursor-pointer font-bold"
+            className="flex items-center gap-1.5 px-3 py-2 bg-midnight-900 border border-gold-500/20 hover:border-gold-400 hover:text-gold-400 text-xs uppercase tracking-widest transition rounded cursor-pointer font-bold"
             id="footer-back-top"
           >
             <ArrowUp className="w-3.5 h-3.5 text-gold-400" />

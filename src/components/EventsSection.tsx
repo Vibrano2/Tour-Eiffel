@@ -135,8 +135,8 @@ export default function EventsSection() {
       ];
 
   return (
-    <section className="py-24 bg-regal-red-900 text-white relative" id="events-section">
-      <div className="absolute inset-0 bg-regal-red-900/92 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-gold-500/5 via-transparent to-transparent pointer-events-none" />
+    <section className="py-24 bg-midnight-900 text-white relative" id="events-section">
+      <div className="absolute inset-0 bg-midnight-900/92 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-gold-500/5 via-transparent to-transparent pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -167,7 +167,7 @@ export default function EventsSection() {
                   className={`p-6 sm:p-8 rounded transition duration-300 flex flex-col justify-between cursor-pointer border ${
                     isSelected 
                       ? 'border-gold-400 bg-gradient-to-br from-[#0c142c] to-[#040612] shadow-xl shadow-gold-500/5' 
-                      : 'border-gold-500/10 bg-regal-red-950/40 hover:border-gold-400/30'
+                      : 'border-gold-500/10 bg-midnight-950/40 hover:border-gold-400/30'
                   }`}
                   id={`hall-card-${hall.id}`}
                 >
@@ -176,7 +176,7 @@ export default function EventsSection() {
                       <span className="w-10 h-10 rounded bg-gold-400/10 flex items-center justify-center text-gold-400">
                         <Building className="w-5 h-5" />
                       </span>
-                      <span className="px-3 py-1 bg-regal-red-900 border border-gold-500/10 text-[10px] tracking-widest text-gray-200 uppercase rounded font-bold">
+                      <span className="px-3 py-1 bg-midnight-900 border border-gold-500/10 text-[10px] tracking-widest text-gray-200 uppercase rounded font-bold">
                         {language === 'fr' ? `Capacité ${hall.capacity}+` : `Holds ${hall.capacity}+ guests`}
                       </span>
                     </div>
@@ -235,7 +235,7 @@ export default function EventsSection() {
                         className={`p-2.5 text-xs text-center border font-semibold rounded cursor-pointer transition ${
                           eventType === item.id 
                             ? 'border-gold-400 bg-gold-400 text-white font-bold' 
-                            : 'border-gold-500/10 bg-regal-red-900/40 text-gray-300 hover:text-white'
+                            : 'border-gold-500/10 bg-midnight-900/40 text-gray-300 hover:text-white'
                         }`}
                         id={`event-type-btn-${item.id}`}
                       >
@@ -251,7 +251,7 @@ export default function EventsSection() {
                   <select
                     value={selectedHall}
                     onChange={(e) => setSelectedHall(e.target.value)}
-                    className="w-full bg-regal-red-900 border border-gold-500/10 focus:border-gold-400 text-sm text-white p-2.5 rounded cursor-pointer outline-none"
+                    className="w-full bg-midnight-900 border border-gold-500/10 focus:border-gold-400 text-sm text-white p-2.5 rounded cursor-pointer outline-none"
                     style={{ colorScheme: 'dark' }}
                     id="calc-select-hall"
                   >
@@ -275,7 +275,7 @@ export default function EventsSection() {
                     max={activeHallDetails.capacity}
                     value={guestsCount}
                     onChange={(e) => setGuestsCount(parseInt(e.target.value))}
-                    className="w-full accent-gold-500 bg-regal-red-900 rounded cursor-pointer"
+                    className="w-full accent-gold-500 bg-midnight-900 rounded cursor-pointer"
                     id="calc-guests-slider"
                   />
                   <div className="flex justify-between text-[9px] text-gray-400 font-bold uppercase mt-1">
@@ -290,7 +290,7 @@ export default function EventsSection() {
                   <select
                     value={cateringTier}
                     onChange={(e) => setCateringTier(e.target.value as any)}
-                    className="w-full bg-regal-red-900 border border-gold-500/10 focus:border-gold-400 text-sm text-white p-2.5 rounded cursor-pointer outline-none"
+                    className="w-full bg-midnight-900 border border-gold-500/10 focus:border-gold-400 text-sm text-white p-2.5 rounded cursor-pointer outline-none"
                     style={{ colorScheme: 'dark' }}
                     id="calc-select-catering"
                   >
@@ -346,7 +346,7 @@ export default function EventsSection() {
                           className={`p-3 rounded border text-xs cursor-pointer select-none transition ${
                             isChecked 
                               ? 'border-gold-400 bg-gold-400/10 font-medium text-gold-300' 
-                              : 'border-gold-500/10 bg-regal-red-900/60 text-gray-300 hover:bg-regal-red-950'
+                              : 'border-gold-500/10 bg-midnight-900/60 text-gray-300 hover:bg-midnight-950'
                           }`}
                           id={`tech-opt-${opt.id}`}
                         >
@@ -368,7 +368,7 @@ export default function EventsSection() {
             </div>
 
             {/* Bill Statement Receipt Right (7 span) */}
-            <div className="lg:col-span-7 bg-regal-red-900/80 p-6 sm:p-8 rounded border border-gold-500/10 flex flex-col justify-between" id="quote-bill-panel">
+            <div className="lg:col-span-7 bg-midnight-900/80 p-6 sm:p-8 rounded border border-gold-500/10 flex flex-col justify-between" id="quote-bill-panel">
               
               <div className="space-y-6">
                 <div className="flex items-center justify-between border-b border-gold-500/5 pb-3">
@@ -467,7 +467,7 @@ export default function EventsSection() {
             {localizedEvents.map((eve) => (
               <div 
                 key={eve.id}
-                className="bg-regal-red-950/40 border border-gold-500/10 rounded-lg overflow-hidden flex flex-col justify-between hover:border-gold-400/30 transition shadow-lg"
+                className="bg-midnight-950/40 border border-gold-500/10 rounded-lg overflow-hidden flex flex-col justify-between hover:border-gold-400/30 transition shadow-lg"
                 id={`upcoming-eve-${eve.id}`}
               >
                 <div className="relative h-[200px]">
@@ -493,7 +493,7 @@ export default function EventsSection() {
                   <p className="text-gold-300 text-xs italic font-light">« {eve.subtitle} »</p>
                   <p className="text-gray-200 text-xs leading-relaxed font-light">{eve.description}</p>
                   
-                  <div className="bg-regal-red-900 p-3 rounded border border-gold-500/5 text-xs text-gray-300 space-y-1 font-light">
+                  <div className="bg-midnight-900 p-3 rounded border border-gold-500/5 text-xs text-gray-300 space-y-1 font-light">
                     <div><strong className="text-gold-400 font-medium">{language === 'fr' ? "Créneau d'exception :" : "Bespoke Timing:"}</strong> {eve.time}</div>
                     <div><strong className="text-gold-400 font-medium">{language === 'fr' ? "Attraction Élite :" : "Elite Attraction:"}</strong> {eve.highlight}</div>
                   </div>

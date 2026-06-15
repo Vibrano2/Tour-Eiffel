@@ -1,26 +1,23 @@
 import { Star, Menu, X, Landmark, Compass, CalendarRange } from 'lucide-react';
 import { useState } from 'react';
-import { ActiveTab } from '../types';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useLanguage } from '../LanguageContext';
 import { motion, useScroll } from 'motion/react';
 import logoImage from '../../assets/images/logo1.svg';
 
-interface HeaderProps {
-  activeTab: ActiveTab;
-  setActiveTab: (tab: ActiveTab) => void;
-}
-
-export default function Header({ activeTab, setActiveTab }: HeaderProps) {
+export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { language, setLanguage, t, hotelInfo } = useLanguage();
   const { scrollYProgress } = useScroll();
+  const location = useLocation();
+  const navigate = useNavigate();
 
-  const navigationItems: { id: ActiveTab; labelKey: string }[] = [
-    { id: 'home', labelKey: 'nav.home' },
-    { id: 'rooms', labelKey: 'nav.rooms' },
-    { id: 'restaurant', labelKey: 'nav.restaurant' },
-    { id: 'events', labelKey: 'nav.events' },
-    { id: 'chat', labelKey: 'nav.chat' }
+  const navigationItems: { id: string; path: string; labelKey: string }[] = [
+    { id: 'home', path: '/', labelKey: 'nav.home' },
+    { id: 'rooms', path: '/rooms', labelKey: 'nav.rooms' },
+    { id: 'restaurant', path: '/restaurant', labelKey: 'nav.restaurant' },
+    { id: 'events', path: '/events', labelKey: 'nav.events' },
+    { id: 'chat', path: '/chat', labelKey: 'nav.chat' }
   ];
 
   return (
@@ -38,7 +35,7 @@ export default function Header({ activeTab, setActiveTab }: HeaderProps) {
           {/* Logo Section */}
           <div 
             className="flex items-center gap-3 cursor-pointer"
-            onClick={() => { setActiveTab('home'); setMobileMenuOpen(false); }}
+            onClick={() => { navigate('/'); setMobileMenuOpen(false); }}
             id="header-logo-container"
           >
             <img src={logoImage} alt="Tour Eiffel Logo" className="h-12 w-auto object-contain drop-shadow-md" />
@@ -47,11 +44,11 @@ export default function Header({ activeTab, setActiveTab }: HeaderProps) {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-1 lg:space-x-4" id="desktop-nav">
             {navigationItems.map((item) => {
-              const isActive = activeTab === item.id;
+              const isActive = location.pathname === item.path;
               return (
                 <button
                   key={item.id}
-                  onClick={() => setActiveTab(item.id)}
+                  onClick={() => navigate(item.path)}
                   className={`relative px-4 py-2 text-sm tracking-widest font-medium uppercase transition-all duration-300 cursor-pointer ${
                     isActive 
                       ? 'text-regal-red-600' 
@@ -159,12 +156,12 @@ export default function Header({ activeTab, setActiveTab }: HeaderProps) {
             </div>
 
             {navigationItems.map((item) => {
-              const isActive = activeTab === item.id;
+              const isActive = location.pathname === item.path;
               return (
                 <button
                   key={item.id}
                   onClick={() => {
-                    setActiveTab(item.id);
+                    navigate(item.path);
                     setMobileMenuOpen(false);
                   }}
                   className={`block w-full text-left px-4 py-3 rounded-md text-base font-medium tracking-wide transition duration-150 cursor-pointer ${
