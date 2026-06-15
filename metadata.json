@@ -1,0 +1,10 @@
+{
+  "name": "Tour Eiffel Hotel Benin",
+  "description": "Luxury 5-star hotel in Porto-Novo, Benin. Experience French-African refinement, gourmet dining, elite event spaces, and personalized 24/7 concierge services.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

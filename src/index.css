@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Outfit:wght@200;300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Outfit", sans-serif;
+  
+  --color-gold-50: #fdfae7;
+  --color-gold-100: #faf1c3;
+  --color-gold-200: #f4e18d;
+  --color-gold-300: #eecf57;
+  --color-gold-400: #e9be31;
+  --color-gold-500: #D4AF37; /* Primary Gold */
+  --color-gold-600: #b49129;
+  --color-gold-700: #8f721e;
+  --color-gold-800: #6a5315;
+  --color-gold-900: #4a3a0e;
+
+  /* Regal Red Palette */
+  --color-regal-red-50: #fef2f2;
+  --color-regal-red-100: #fee2e2;
+  --color-regal-red-200: #fecaca;
+  --color-regal-red-300: #fca5a5;
+  --color-regal-red-400: #f87171;
+  --color-regal-red-500: #ef4444; 
+  --color-regal-red-600: #dc2626; /* Primary Red */
+  --color-regal-red-700: #b91c1c;
+  --color-regal-red-800: #991b1b;
+  --color-regal-red-900: #7f1d1d;
+  --color-regal-red-950: #450a0a;
+  
+  --color-midnight-50: #eff0f6;
+  --color-midnight-100: #dadded;
+  --color-midnight-200: #b6bcd9;
+  --color-midnight-300: #8b96c1;
+  --color-midnight-400: #5f6fa8;
+  --color-midnight-500: #3f4e8b;
+  --color-midnight-600: #303b6e;
+  --color-midnight-700: #232a51;
+  --color-midnight-800: #121631;
+  --color-midnight-900: #080E21; 
+  --color-midnight-950: #040612;
+}
+
+/* Custom globally accessible utility styles for maximum luxury aura */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+    background-color: #FAFAFA; /* Off-white / Pearl */
+    color: #111827; /* Dark Charcoal */
+  }
+  
+  body {
+    overflow-x: hidden;
+  }
+  
+  /* Scrollbar Design */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #040612;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #D4AF37;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #eecf57;
+  }
+}
+
+.luxury-text-gradient {
+  background: linear-gradient(135deg, #FFF 30%, #E1C16D 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-text-gradient {
+  background: linear-gradient(135deg, #f4e18d 0%, #D4AF37 50%, #8f721e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-border-gradient {
+  border-image: linear-gradient(to right, #8f721e, #D4AF37, #8f721e) 1;
+}
