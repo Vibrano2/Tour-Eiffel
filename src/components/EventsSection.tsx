@@ -138,7 +138,7 @@ export default function EventsSection() {
     <section className="py-24 bg-midnight-900 text-white relative" id="events-section">
       <div className="absolute inset-0 bg-midnight-900/92 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-gold-500/5 via-transparent to-transparent pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center mb-16">
